@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <h1> 注册页  </h1>
+    <meta charset="UTF-8">
+    <title>The fifth web exercise</title>
+    <!-- 适配移动端-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+
+    <style type="text/css">
+      body {
+          background-color: #77aae9;
+          color: #ffffff;
+      }
+
+      /*给滑动条添加样式*/
+      input[type="range"] {
+          -webkit-appearance: none; /*禁用滑动条的默认样式*/
+          border-radius: 15px; /*设置滑动条的圆角大小*/
+          width: 60%; /*设置滑动条的宽*/
+          height: 10px; /*设置滑动条的高*/
+          background-color: #313335; /*设置滑动条的背景色*/
+
+      }
+
+      /*给滑块(thumb)添加样式*/
+      input[type="range"]::-webkit-slider-thumb {
+          -webkit-appearance: none; /*禁用滑动条上的按钮的默认样式*/
+          border-radius: 15px; /*设置滑动条上的按钮的圆角大小*/
+          height: 30px; /*设置滑块的高，应该比滑动条要大一些*/
+          width: 20px; /*设置滑块的宽*/
+          top: -5px; /*让滑块向上偏移 (滑块高-滑动条高)/2*/
+          background-color: #ffffff; /*设置滑块的背景色*/
+      }
+    </style>
+    <script type="text/javascript">
+        /**
+         * 滑动条变化事件，当滑动条数值变化时自动触发
+         * 注意：传入的参数 inputDom 的值如果和 type="range" 标签的 id 一致，则此时 inputDom 就表示 input 标签的 DOM 对象
+         */
+        function inputHandler(inputDom) {
+            var inputJQ = $(inputDom);//DOM 对象转 JQuery 对象
+            var currentVolume = inputJQ.val();
+            inputJQ.next().text(currentVolume + "%");//input 后面 span 的值
+
+            var srcOld = inputJQ.prev().attr("src");//获取 src 属性值
+            var matched = srcOld.match(/volume_1/g);//g表示全局匹配是否含有 srcOld 中含有"volume_1"字符串
+            if (currentVolume == 0 && matched != null) {
+                inputJQ.prev().attr("src", srcOld.replace("_1", "_0"));//切换为静音图标
+            }
+            if (currentVolume != 0 && matched == null) {
+                inputJQ.prev().attr("src", srcOld.replace("_0", "_1"));//切换为非静音图标
+            }
+        }
+
+    </script>
+  </head>
+<body align="center">
+    <form action="">
+      <fieldset>
+      <legend>用户注册</legend>
+      <label for="user">用户</label><input type="text" name="user" id="user" placeholder="大于10位整数" required=""><br>
+      <label for="password">密码</label><input type="password" name="password" id="password" placeholder="密码要求包含字母、符号等"><br>
+      <label for="tel">电话</label><input type="tel" name="tel"  id="tel" placeholder="电话"><br>
+      <label for="email">邮箱</label><input type="email" name="email" id="email" placeholder="********@**.com"><br>
+      <label for="name">姓名</label><input  type="text" name="lastname" placeholder="如：张三"><br>
+      <label for="用户类别">用户种类</label><br> <select name=theDay size=5>
+        <option value=0 selected>教师
+        <option value=1>学生
+        <option value=2>研究开发人员
+        <option value=3>科研爱好者
+        <option value=4>软件开发者
+        <option value=5>软件测试者
+        <option value=6>运营维护者
+    </select>
+    <br><br>
+
+    <label for="性别">性别：</label><br>
+     <input type="radio" name="sex" value="male">男 <br>
+    <input type="radio" name="sex" value="male">女<br>
+    </form><br>
+
+    <label for="输入您的兴趣领域">输入您的兴趣领域：</label><br>
+    <form>
+      <input type="checkbox" name="vehicle" value="极客">极客<br>
+      <input type="checkbox" name="vehicle" value="高新科技">高新科技<br>
+      <input type="checkbox" name="vehicle" value="综艺娱乐">综艺娱乐<br>
+      <input type="checkbox" name="vehicle" value="音乐">音乐<br>
+      <input type="checkbox" name="vehicle" value="运动">运动<br>
+    </form><br><br>
+
+    <label for="年龄">年龄：</label><br>
+    <input id="range" type="range" min="0" max="100" value="1"step="1" oninput="change()" onchange="change()">
+		<span id="value">0</span>
+		<script type='text/javascript'>
+			function change() {
+  				var value = document.getElementById('range').value ;
+  				document.getElementById('value').innerHTML = value;
+			}
+		</script><br><br><br>
+
+    <label for="age">在站时长（年）：</label><br>
+    <input type="namber" min="0"max="20"/ placeholder="如果您刚入坑，请填0"><br><br><br>
+
+    <label for="地理位置">地理位置：</label><br>
+    <div class="citylist"></div>
+    <select id="gzsj"  onchange="gzsj();">
+        <option value="">请选择</option>
+        <option  value="1">China</option>
+        <option value="2">India</option>
+        <option value="3">the United States</option>
+        <option value="4">Indonesia</option>
+        <option value="5">Brazil</option>
+        <option value="6">Pakistan,</option>
+        <option value="7">Bangladesh</option>
+        <option value="8">Russia</option>
+        <option value="9">Mexico</option>
+        <option value="10">others</option>
+      </select>
+
+      <span id="spandemo">
+        <select id="testsj" onchange="ajslsj();">
+        <option value="">请选择</option>
+        <option value="1">Fujian FJ</option>
+        <option value="2"> Sinkiang</option>
+        <option>Inner Mongolia</option>
+        <option>tibet</option>
+        <option>HongKong</option>
+        <option>Macau</option>
+        <option>shanghai</option>
+        <option>Guangdong GD</option>
+        <option>Beijing BJ</option>
+        <option>Guangxi GX</option>
+        <option>Guizhou GZ</option>
+        <option> Hainan HI</option>
+        <option>Hebei HE</option>
+        <option>Henan HA</option>
+        <option>Heilongjiang HL</option>
+        <option>Hubei HB</option>
+        <option>Hunan HN</option>
+        <option>Jilin JL</option>
+        <option>Jiangsu JS</option>
+      </select>
+    </span>
+  </div><br><br>
+
+  <label for="未包含地点">未列出地点：</label><br>
+    <input type="text" list="citylist"  placeholder="国家/省份"  /><br><br>
+
+   邮编:
+    <input type='text' pattern="[0-9]{6}"title="请输入6位数的邮编" placeholder="请输入6位邮编"/>
+    <input type="submit"/><br><br><br>
+
+<h3>还差最后一步了，请留下您的生日吧，本站会在您生日时送出好礼:</h3>
+<input type="date" name="user_date"/><br><br><br><br>
+      <!-- <input type="submit" value="注册"> -->
+      <button ">注册</button><br><br>
+      <a href="http://172.20.10.6/"title="转向视频页面"target="_blank"accesskey="M"tabindex="2"> 跳过注册，直接进入界面</a>
+      <ins src="http://172.20.10.6/> 跳过注册，直接进入界面</ins><br>
+      <h2>…………………………………………………………一定要点击上面的跳过注册啊！！！…………………………………………………………</h2><br>
+      </fieldset>
+      </form>
+
+    <body>
+    <html>

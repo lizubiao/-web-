@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<title>
+WEB无插件多媒体
+</title>
+<body>
+<audio id="demoAudio">
+    <source src="media/xi-Halcyon.mp3">
+    <source src="media/xi-Halcyon.ogg">
+</audio>
+
+<video id="demoVideo">
+    <source src="media/Animation.mp4">
+    <source src="media/Animation.webm">
+</video>
+</body>
+</html>

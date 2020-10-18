@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- saved from url=(0017)http://localhost/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>多媒体和表单</title>
+</head>
+<body>
+    <h2>时间煮雨</h2>
+    <audio src="./music.mp3" controls="controls">
+         your browser does not support the audio tag
+        </audio>
+    <h2>野生动物</h2>
+    <video src="./wildlife.wmv" width="320" height="240" controls="controls">
+        your browser does not support the audio tag
+    </video>
+    <form action="http://www.dlmu.edu.cn/" method="get">
+    <p>First name:<input type="text" name="fname"></p>
+    <p>Last name:<input type="text" name="lname"></p>
+    <p>Password:<input type="password" name="pwd"></p>
+    <label for="boy">male</label>
+    <input type="radio" name="sex" id="male"><br>
+    <label for="boy">female</label>
+    <input type="radio" name="sex" id="female"><br>
+    <input type="checkbox" name="animal" value="lion">i like lions<br>
+    <input type="checkbox" name="animal" value="mice">i hate mouse<br>
+    <input type="checkbox" name="animal" value="peacock">peacocks are beautiful<br>
+    <input type="file" size="40"><br>
+    <input type="reset" value="reset"><br>
+    <input type="image" src="./2220193970 张欣 多媒体表单_files/dlmu picture.jpg" width="50" height="50"><br>
+    <input type="hidden" name="age" value="nine">
+    Email:<input type="email" value="user_url"><br>
+    Homepage<input type="url" value="user_url"><br>
+    points:<input type="number" name="points" min="1" max="10"><br>
+    <input type="range" name="points" min="1" max="10"><br>
+    Date<input type="date" name="user_date"><br>
+    <input type="text" required="required"><br>
+    <intput type="text" autofocus="autofocus">
+    <select>
+        <optgroup label="大学生">
+        <option value="大连海事大学">猪</option>
+        <option>狗</option>
+        </optgroup>
+        <option>鸭</option>
+    </select><br>
+    <textarea cols="30" rows="5">那一年盛夏，我们说好不分离要一直一直在一起，就算与时间为敌，就算与全世界背离。风吹凉雪花，吹白我们的头发。</textarea><br>
+    Please enter your phonenumber:<input type="text" pattern="[0-9]{11}" title="eleven postcode"><br>
+    <input type="submit" value="Submit">
+     
+
+</intput></form></body></html>

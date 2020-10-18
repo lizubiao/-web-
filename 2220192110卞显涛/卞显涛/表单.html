@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <p>名称：<input type="text" name="firstname"></p>
+        <p>介绍：<input type="text" name="lastname"></p>
+        <p>密码: <input type="password"></p>
+        <br>
+        <input type="submit" value="提交"><br>
+        <input type="range" name="points" min="0" max="10" step="1" value="6">选择<br>
+    </form>
+    <form>
+        <input type="radio" name="sex" value="男">男<br>
+        <input type="radio" name="sex" value="女">女<br>
+        <input type="checkbox" name="vehicle" value="study">学习 <br>
+        <input type="checkbox" name="vehicle" value="play game">游戏<br>
+        <input type="button" value="进行"><br>
+        <input type="image" src="001.jpg" width="100px" height="50px"><br>
+        <input type="number" name="points" min="1" max="10"><br>
+        <input type="date" name="user_date"><br>
+    </form>
+    <select size="2" required autofocus>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+    </select>
+    <form>
+        <label for="male">男</label>
+        <input type="radio" name="sex" id="男"><br>
+        <label for="female">女</label>
+        <input type="radio" name="sex" id="女">
+    </form>
+    <form>
+        <fieldset>
+            <legend>健康</legend>
+            <label>身高:<input type="text"></label>
+            <label>体重:<input type="text"></label>
+        </fieldset>
+    </form>
+</body>
+</html>

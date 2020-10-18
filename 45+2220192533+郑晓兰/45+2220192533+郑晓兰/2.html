@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>上机实验</title>
+    </head>
+    <body>
+        <audio controls="controls">
+            <source src="./audio/汪苏泷 - 无名之辈.mp3" type="audio/mp3">
+                <source src="./audio/李宇春 - 珍惜.mp3" type="audio/mp3">
+                    your music is good!
+        </audio>
+        <video width="320" height="240" controls="controls">
+            <source src="./video/李荣浩 - 麻雀.mp4" type="video/mp4">
+                <source src="./video/薛之谦 - 演员.mp4" type="video/mp4">
+        我们要多听音乐。
+        </video>
+        <form action="form_actionm.php" method="get">
+            <p>first name：<input type="text" name="fname" width="100%"></p>
+            <p>last name：<input type="text" name="lname" height="80%"></p>
+            First name:<input type="text" name="Firstname" width="100%"><br>
+            Last name:<input type="text" name="Lastname" height="80%"><br>
+            Password:<input type="password" name="pwd"><br>
+            <input type="radio" name="sex" value="male">Male<br>
+            <input type="radio" name="sex" value="female">Female<br>
+            <input type="checkbox" name="fruit" value="Apple">I have an apple.<br>
+            <input type="checkbox" name="fruit" value="Banana">I have a banana.<br>
+            <input type="button" value=""/>NAME="确认是否上交"<br>
+            Username:<input type="text" name="user">
+            <input type="submit" value="Submit"/><br>
+            <input type="file" size="20"/>
+            <input type="reset"/>
+            <input type="image" src="./img/教室.jpg"/><br>
+            <input type="hidden" name="country" value="Norway"/><br>
+            E-mail:<input type="email" name="user_email"><br>
+            Homepage:<inpur type="url" name="user_url"/><br>
+            Points:<input type="number" name="points" min="1" max="10" step="3"/>
+            <input type="range" name="points" min="1" max="10"/><br>
+            Date:<input type="date" name="user_date"/>
+            <input type="search"/><br>
+            请输入邮政编码：<input type="text" pattern="[0-9]{6}" title="输入六位数的邮编"/>
+            <input type="submit"/><br>
+            <input type="text" placeholder="请输入用户名"/><br>
+            请输入邮政编码：<input type="text" required="required"/><input type="submit"/><br>
+            focus:<input type="text" autofocus="autofocus"/><br>
+            自动完成功能：<input type="text" list="citylist"/><br>
+            <datalist id="citylist">
+                <option>Beijing</option>
+                <option>QingDao</option>
+                <opyion>HanDan</opyion>
+            </datalist>
+            <select>
+                <option value="大连海事大学">DMU</option>
+                <option value="信息管理与信息系统">MIS</option>
+                <option value="1班">The First Class</option>
+            </select><br>
+            <select>
+                <optgroup label="fruit">
+                    <option value="apple">Apple</option>
+                    <option value="banana">Banana</option>
+                </optgroup>
+                <optgroup label="colors">
+                    <option value="red">Red</option>
+                    <option value="yellow">Yellow</option>
+                </optgroup>
+            </select><br>
+            <textarea cols="50" rows="3">大连海事大学航运经济与管理系统信息管理与信息系统专业</textarea><br>
+            <label for="male">Male</label>
+            <input type="radio" name="sex" id="male"/><br>
+            <label for="female">Female</label>
+            <input type="radio" name="sex" id="female"/><br>
+            <fieldset>
+                <legend>健康</legend>
+                <label>身高：<input type="text"/>/label>
+                <label>体重：<input type="text"/>/label>
+            </fieldset>
+        </form>
+    </body>
+</html>
